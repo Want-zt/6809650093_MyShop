@@ -1,3 +1,4 @@
+/*index*/
 * {
   margin: 0;
   padding: 0;
@@ -136,10 +137,10 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/*More Menu*/
 .more-menu {
   margin-top: 30px;
-  text-align: right;
-  padding-right: 50px;
+  text-align: center;
 }
 
 .btn-more {
@@ -157,9 +158,9 @@ body {
   background: #6b7554;
 }
 
+/*DRINKS MENU*/
 .full-menu {
   padding: 60px 20px;
-  background: #f9f9f9;
   text-align: center;
 }
 
@@ -170,14 +171,32 @@ body {
 }
 
 .menu-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.menu-gallery a {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.menu-gallery a:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .menu-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .menu-gallery img {
-  width: 400px;
+  width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
